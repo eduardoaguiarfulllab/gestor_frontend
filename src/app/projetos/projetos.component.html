@@ -1,8 +1,9 @@
-<!-- <div class="row">
-    <div class="col">
-        <button type="button" class="btn btn-light">Novo</button>
-    </div>    
-</div> -->
+<nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Projetos</li>
+        </ol>
+</nav>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Projetos</a>
     <button 
@@ -19,26 +20,8 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-            <!-- <a class="nav-link" href="#">Novo <span class="sr-only">(current)</span></a> -->
-            <button class="btn btn-sm btn-outline-secondary" type="button">Novo Projeto</button>
+            <button class="btn btn-sm btn-outline-secondary" (click)="gotoNew('/projeto-novo', null)" type="button">Novo Projeto</button>
         </li>
-        <!-- <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-        </li> 
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-        </li> 
-        <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-        </li> -->
         </ul> 
         <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
@@ -65,7 +48,7 @@
                     <td>{{item.dataInicio}}</td>
                     <td>{{item.autor}}</td>
                     <td>
-                        <span class="px-3"><a href="/projeto"><fa-icon [icon]="faPencilAlt"></fa-icon></a></span>
+                        <span class="px-3"><a [routerLink]="'/projeto-editar'" routerLinkActive="active"><fa-icon [icon]="faPencilAlt"></fa-icon></a></span>
                         <span class="px-3"><a href="/projeto"><fa-icon [icon]="faEye"></fa-icon></a></span>                                                
                     </td>                    
                     </tr>

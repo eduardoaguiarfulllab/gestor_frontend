@@ -1,0 +1,43 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Projetos</li>
+      <li class="breadcrumb-item active" aria-current="page">Novo</li>
+    </ol>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Novo Projeto</a>
+  <button 
+      class="navbar-toggler" 
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent" 
+      aria-controls="navbarSupportedContent" 
+      aria-expanded="false" 
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+          <button class="btn btn-sm btn-outline-secondary" (click)="salvar()" type="button">Salvar</button>
+      </li>
+      </ul> 
+      <form class="form-inline my-2 my-lg-0">
+      </form>
+  </div>
+</nav>
+
+<div class="row">
+    <div class="col-4">
+      <div class="list-group" id="list-tab" role="tablist">
+        <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" [routerLink]="'/detalhes'" routerLinkActive="active"role="tab" aria-controls="detalhes">Detalhes do Projeto</a>
+        <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" [routerLink]="'/descricao'" routerLinkActive="active" role="tab" aria-controls="profile">Descricao</a>
+        <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" [routerLink]="'/atores'" routerLinkActive="active" role="tab" aria-controls="messages">Requsitos</a>        
+      </div>
+    </div>
+    <div class="col-8">
+        <router-outlet></router-outlet>
+    </div>
+</div>

@@ -1,22 +1,26 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-// import { ApplyComponent } from './apply/apply.component';
-// import { LeavesComponent } from './leaves.component';
-// import { Page404leavesComponent } from './page404leaves/page404leaves.component';
-
+import { NovoProjetoComponent } from './novo-projeto.component';
+import { ProjetoNovoDetalhesComponent } from './projeto-novo-detalhes/projeto-novo-detalhes.component';
+import { ProjetoNovoDescricaoComponent } from './projeto-novo-descricao/projeto-novo-descricao.component';
+import { ProjetoNovoAtoresComponent } from './projeto-novo-atores/projeto-novo-atores.component';
 
 const routes: Routes = [
   {
-    // path: '', component: LeavesComponent, children: [
-    //   {
-    //     path: 'apply', component: ApplyComponent
-    //   },
-    //   { path: 'balance', loadChildren: () => import(`./balance/balance.module`).then(m => m.BalanceModule) },
-    //   {
-    //     path: '', redirectTo: 'apply', pathMatch: 'full'
-    //   },
-    //   { path: '**', component: Page404leavesComponent }
-    // ]
+    path: '', component: NovoProjetoComponent, children: [
+      {
+        path: 'detalhes', component: ProjetoNovoDetalhesComponent
+      },
+      {
+        path: 'descricao', component: ProjetoNovoDescricaoComponent
+      },
+      {
+        path: 'atores', component: ProjetoNovoAtoresComponent
+      },
+      {
+        path: '', redirectTo: 'detalhes', pathMatch: 'full'
+      }
+    ]
   }
 ];
 

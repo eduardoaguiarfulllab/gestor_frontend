@@ -23,8 +23,8 @@ export class ProjetosComponent implements OnInit {
   ngOnInit() {
   }
 
-  public gotoNew(url, id) {
-    this.router.navigate([url, id]).then( (e) => {
+  public gotoNew(url) {
+    this.router.navigate([url], {}).then( (e) => {
       if (e) {
         console.log('Navigation is successful!');
       } else {
